@@ -16,7 +16,7 @@ class MyViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white,NSFontAttributeName:UIFont.systemFont(ofSize: 20)]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white,NSAttributedStringKey.font:UIFont.systemFont(ofSize: 20)]
         
         self.view.backgroundColor = backGroundColor
 
@@ -40,7 +40,7 @@ class MyViewController: UIViewController {
         return barBtn
     }
     
-    func keyboardDidChangeFrame(_ noti: Notification){
+    @objc func keyboardDidChangeFrame(_ noti: Notification){
         
         
         let frame = (noti.userInfo![UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue

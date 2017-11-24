@@ -96,7 +96,7 @@ class MyTabBarController: UITabBarController {
     }
     
     
-    func btnClick(_ sender: UIButton) {
+    @objc func btnClick(_ sender: UIButton) {
         
         if sender.tag == 2 {
             

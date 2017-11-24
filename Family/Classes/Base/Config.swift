@@ -12,11 +12,11 @@ import UIKit
 /**
  *  背景颜色
  */
-let backGroundColor = UIColor.init(colorLiteralRed: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
+let backGroundColor = UIColor.init(red: 0.92, green: 0.92, blue: 0.92, alpha: 1.0)
 /**
 *  导航栏颜色
 */
-let navgationBarColor = UIColor.init(colorLiteralRed: 0.48, green: 0.79, blue: 0.47, alpha: 1.0)
+let navgationBarColor = UIColor.init(red: 0.48, green: 0.79, blue: 0.47, alpha: 1.0)
 /**
  *  设备宽高
  */

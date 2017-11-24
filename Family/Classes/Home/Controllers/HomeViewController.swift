@@ -21,7 +21,7 @@ class HomeViewController: MyViewController {
         self.navigationItem.leftBarButtonItem = self.addCustomBarButtonItemByTitle("返回", target: self, action: #selector(HomeViewController.dismissViewController))
     }
 
-    func dismissViewController(){
+    @objc func dismissViewController(){
         self.view.endEditing(true)
         self.navigationController?.dismiss(animated: true, completion: { () -> Void in
             
