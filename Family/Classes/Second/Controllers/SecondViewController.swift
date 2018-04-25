@@ -18,6 +18,31 @@ class SecondViewController: MyViewController {
         
         
         self.navigationItem.title = "第二"
+        
+        //字符串加密
+        
+        let content: String = "1"
+        let hash: String = "FuGN-hy33QS-7c8sv-k30LBYAh1H"
+        let hashAlgo: String = "a"
+        
+        let hashDecoded: Data = safeBase64Decode(encoded: hash)
+        let messageBytes: [UInt8] = Array(content.utf8)
+            + hashDecoded.withUnsafeBytes{[UInt8](UnsafeBufferPointer(start: $0, count: hashDecoded.count))}
+            + Array(hashAlgo.utf8)
+        
+        let message: Data = Data(bytes: messageBytes)
+        let hashServer: String = message.base64EncodedString()
+        print("要上传服务器的加密字符串：" + hashServer)
+    }
+    
+    func safeBase64Decode(encoded: String) -> Data! {
+        let base64Encoded = encoded
+            .replacingOccurrences(of: "-", with: "+")
+            .replacingOccurrences(of: "_", with: "/")
+        if let data = Data(base64Encoded: base64Encoded) {
+            return data
+        }
+        return nil
     }
 
     override func didReceiveMemoryWarning() {
